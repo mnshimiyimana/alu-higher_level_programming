@@ -1,10 +1,16 @@
 #!/usr/bin/python3
-"""a class will inherit from a built-in class
+"""
+    defining class 'MyList'
 """
 
 
-Class Mylist(list):
-    """Prints a sorted list"""
+class MyList(list):
+    """
+        develop the sorted list
+    """
 
     def print_sorted(self):
+        """
+            prints the sorted list
+        """
         print(sorted(self))
