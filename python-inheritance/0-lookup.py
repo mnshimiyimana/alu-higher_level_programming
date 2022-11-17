@@ -2,6 +2,8 @@
 """
     define a function 'lookup'
 """
+
+
 def lookup(obj):
     """
         Returns list object
