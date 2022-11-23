@@ -2,16 +2,18 @@
 """Takes my Github credentials (username and password) and uses the Github API to display your id"""
 
 
-from requests.auth import get, auth
+import requests
 import sys
+import requests.auth
 
-if __name__ == '__main__':
-    url = 'https://api.github.com/user'
-    user = sys.argv[1]
+if __name__ == "__main__":
+    username = sys.argv[1]
     password = sys.argv[2]
-    r = requests.get(url, auth=HTTPBasicAuth(user, password))
-    print(r.json().get('id'))
+    basic = requests.auth.HTTPBasicAuth(username, password)
+    response = requests.get(
+        'https://api.github.com/user', auth=basic)
     try:
-        print(r.json().get('id'))
+        json_response = response.json()
+        print("{}".format(json_response["id"]))
     except:
-        print("None")
+        print(None)
