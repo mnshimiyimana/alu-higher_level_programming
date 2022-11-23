@@ -2,26 +2,26 @@
 """Python script that takes in a letter and sends a POST request """
 
 
+
 import requests
 import sys
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    url = "http://0.0.0.0:5000/search_user"
+    data = {"q": ""}
+
     try:
-        letter = sys.argv[1]
-    except IndexError:
-        letter = ""
-        response = requests.post("http://0.0.0.0:5000/search_user",
-        data={"q": lett}
-        )
+        data["q"] = sys.argv[1]
+    except:
+        pass
+
+    response = requests.post(url, data)
+
     try:
-            json_response = response.json()
-        if response.headers.get("Content-Type") == 'application/json':
-            if len(json_response) > 0:
-                print("[{}] {}".format(
-                    json_response["id"],
-                    json_response["name"])
-                )
-            else:
-                print("No result")
+        json_0 = response.json()
+        if not json_0:
+            print("No result")
+        else:
+            print("[{}] {}".format(json_0.get("id"), json_0.get("name")))
     except:
         print("Not a valid JSON")

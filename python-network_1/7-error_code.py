@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Display the body of the response"""
 
+
+
 import requests
 import sys
 
