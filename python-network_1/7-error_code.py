@@ -5,11 +5,12 @@
 import requests
 import sys
 
-if __name__ == '__main__':
-  """Sending the email"""
+
+if __name__ == "__main__":
+    """send the email"""
     url = sys.argv[1]
-    r = requests.get(url)
-    if r.status_code >= 400:
-        print("{}".format(r.text))
+    response = requests.get(url)
+    if response.status_code <= 400:
+        print("{}".format(response.text))
     else:
-        print("Error code: {}".format(r.status_code))
+        print("Error code: {}".format(response.status_code))
