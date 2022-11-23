@@ -2,7 +2,6 @@
 """Display the body of the response"""
 
 
-
 import requests
 import sys
 
