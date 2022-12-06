@@ -55,13 +55,13 @@ check for overflow:
 
 check for one missing argument
     >>> add_integer(None, 2.2)
-    Traceback(most recent call last):
+    Traceback (most recent call last):
     ...
     TypeError: a must be an integer
 
 check for two missing argument
     >>> add_integer(None)
-    Traceback(most recent call last):
+    Traceback (most recent call last):
     ...
     TypeError: a must be an integer
 
