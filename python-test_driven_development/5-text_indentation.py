@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Function that prints a text with 2 new lines after each of these character"""
+"""Function that prints a text with 2 new lines """
 
 
 def text_indentation(text):
-    """Function that prints a text with 2 new lines """
-    
+    """Function that prints a text with 2 new lines """    
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
