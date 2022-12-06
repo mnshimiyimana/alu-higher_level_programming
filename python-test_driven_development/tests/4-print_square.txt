@@ -11,6 +11,7 @@ Importing the function 'print_square'
 ####
 
 >>> print_square(0)
+<BLANKLINE>
 
 >>> print_square()
 Traceback (most recent call last):
