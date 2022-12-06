@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Function that prints a text with 2 new lines after each of these characters: ., ? and :"""
+"""Function that prints a text with 2 new lines after each of these characters"""
 
 
 def text_indentation(text):
-    """Function that prints a text with 2 new lines after each of these characters: ., ? and :"""
+    """Function that prints a text with 2 new lines"""
+
     if type(text) is not str: # if text is not a string
         raise TypeError("text must be a string")
     for i in range(len(text)):  # for each character in text
