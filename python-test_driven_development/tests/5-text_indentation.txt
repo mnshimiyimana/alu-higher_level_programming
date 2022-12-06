@@ -21,7 +21,6 @@ Potter
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation("Hogwarts. School?")
-Hogwarts.
-<BLANKLINE>
-School? 
+>>> text_indentation("try1?", "try2")
+Traceback (most recent call last):
+TypeError: text_indentation() only takes 1 positional argument
