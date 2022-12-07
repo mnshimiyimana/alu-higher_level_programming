@@ -5,20 +5,20 @@
 import json
 
 class Base:
-    """Base class documentation"""
+    '''Base class documentation'''
 
 
 __nb_objects = 0
 
     def __init__(self, id=None):
-        """ Constructor documentation"""
+        ''' Constructor documentation'''
 
 
         self.id = id
         if id is not None:
             self.id = id
         else:
-            """Increment the number of objects"""
+            '''Increment the number of objects'''
 
 
             Base.nb_objects += 1
@@ -26,7 +26,7 @@ __nb_objects = 0
 
      @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns the JSON string representation of list_dictionaries"""
+        '''Returns the JSON string representation of list_dictionaries'''
 
 
         if list_dictionaries is None or list_dictionaries == []:
@@ -35,7 +35,7 @@ __nb_objects = 0
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file"""
+        '''Writes the JSON string representation of list_objs to a file'''
 
 
         filename = cls.__name__ + ".json"
@@ -49,7 +49,7 @@ __nb_objects = 0
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of the JSON string representation json_string"""
+        '''Returns the list of the JSON string representation json_string'''
 
 
         if json_string is None or json_string == "":
@@ -58,7 +58,7 @@ __nb_objects = 0
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes already set"""
+        '''Returns an instance with all attributes already set'''
 
 
         if cls.__name__ == "Rectangle":
@@ -70,7 +70,7 @@ __nb_objects = 0
 
     @classmethod
     def load_from_file(cls):
-        """Returns a list of instances"""
+        '''Returns a list of instances'''
 
 
         filename = cls.__name__ + ".json"
