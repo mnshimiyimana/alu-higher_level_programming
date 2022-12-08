@@ -72,7 +72,7 @@ class Square(Rectangle):
                 setattr(self, arg, kwargs.get(arg))
 
 
-   def to_dictionary(self):
+    def to_dictionary(self):
         """
         returns the dictionary representation of a Square
         """
