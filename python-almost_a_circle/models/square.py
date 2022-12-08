@@ -3,6 +3,9 @@
 """Dictionary representation of the class square"""
 
 
+from models.rectangle import Rectangle
+
+
 class Square(Rectangle):
     """Module Representation of Square
 """
