@@ -5,7 +5,8 @@
 
 from models.base import Base
 
- class Rectangle(Base):
+
+class Rectangle(Base):
     '''
         Defining the Rectangle class
         Inherits from:
