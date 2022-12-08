@@ -3,61 +3,41 @@
 """Dictionary representation of the class square"""
 
 
-from .rectangle import Rectangle
-
-
 class Square(Rectangle):
-    """
-    Defines square class
-    Attr:
-        size(int): size of square
-        x(int): value at x axis
-        y(int): value at y axis
-        id(int): identifies square instance
-    """
-    def __init__(self, size, x=0, y=0, id=None):
-        """
-        initializes all attributes of the square instance
-        """
+    """Module Representation of Square
+"""
 
+    def __init__(self, size, x=0, y=0, id=None):
+        """Initialization a Square
+        """
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
+        """module Square size getter
         """
-        get size
-        """
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, value):
+        """module Square size setter
         """
-        sets value to size
-        Attr:
-            value(int): value to be set to size
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
+        """module string represation of square
         """
-        string representation of the square
-        """
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
-                                                         self.y, self.size)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.width)
 
     def update(self, *args, **kwargs):
+        """module update square
         """
-        updates Square instance
-        """
-        i = 0
-        if args:
-            for arg in args:
+        if len(args):
+            for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg
                 elif i == 1:
@@ -66,17 +46,17 @@ class Square(Rectangle):
                     self.x = arg
                 elif i == 3:
                     self.y = arg
-                i += 1
         else:
-            for arg in kwargs:
-                setattr(self, arg, kwargs.get(arg))
-
+            for key, value in kwargs.items():
+                if hasattr(self, key) is True:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
+        """retrun dictonary
         """
-        returns the dictionary representation of a Square
-        """
-        return {'id': self.id,
-                'size': self.size,
-                'x': self.x,
-                'y': self.y}
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
