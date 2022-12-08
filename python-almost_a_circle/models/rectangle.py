@@ -138,15 +138,4 @@ from models.base import Base
         'width': self.width, 
         'height': self.height, 
         'x': self.x, 
-        'y': self.y}
-        
-
- 
-
-
-
-
-
-        print("\n" * self.y, end="")
-        for i in range(self.height):
-            print(" " * self.x, end="")
+        'y': self.y)
