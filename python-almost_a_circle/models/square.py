@@ -1,63 +1,82 @@
 #!/usr/bin/python3
 
-"""Dictionary representation of the class"""
+"""Dictionary representation of the class square"""
 
 
-from models.rectangle import Rectangle
+from .rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class"""
-
+    """
+    Defines square class
+    Attr:
+        size(int): size of square
+        x(int): value at x axis
+        y(int): value at y axis
+        id(int): identifies square instance
+    """
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor"""
-        super().__init__(size, size, x, y, id)
+        """
+        initializes all attributes of the square instance
+        """
 
-    def __str__(self):
-        """String representation"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        super().__init__(size, size, x, y, id)
+        self.size = size
 
     @property
     def size(self):
-        """Getter for size"""
-        return self.width
+        """
+        get size
+        """
+        return self.__width
 
     @size.setter
     def size(self, value):
-        """Setter for size"""
-        self.width = value
-        self.height = value
+        """
+        sets value to size
+        Attr:
+            value(int): value to be set to size
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        self.__height = value
+
+    def __str__(self):
+        """
+        string representation of the square
+        """
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
+                                                         self.y, self.size)
 
     def update(self, *args, **kwargs):
-        """Update the class"""
-        if len(args) !=0:
-            try:
-                self.id = args[0]
-                self.size = args[1]
-                self.x = args[2]
-                self.y = args[3]
-            except IndexError:
-                pass
+        """
+        updates Square instance
+        """
+        i=0
+        if args:
+            for arg in args:
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+                i += 1
+        else:
+            for arg in kwargs:
+                setattr(self, arg, kwargs.get(arg))
 
-            elif len(kwargs) != 0:
-            if 'id' in kwargs:
-                    self.id = kwargs['id']
-            else:
-                        self.id = self.id
-            if 'size' in kwargs:
-                    self.size = kwargs['size']
-            else:
-                        self.size = self.size
-            if 'x' in kwargs:
-                    self.x = kwargs['x']
-            else:
-                        self.x = self.x
-            if 'y' in kwargs:
-
-                    self.y = kwargs['y']
-            else:
-                        self.y = self.y
 
     def to_dictionary(self):
-        """Dictionary representation of the class"""
-        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        """
+        returns the dictionary representation of a Square
+        """
+        return {'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y}
