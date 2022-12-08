@@ -55,7 +55,7 @@ class Square(Rectangle):
         """
         updates Square instance
         """
-        i=0
+        i = 0
         if args:
             for arg in args:
                 if i == 0:
@@ -72,7 +72,7 @@ class Square(Rectangle):
                 setattr(self, arg, kwargs.get(arg))
 
 
-    def to_dictionary(self):
+   def to_dictionary(self):
         """
         returns the dictionary representation of a Square
         """
