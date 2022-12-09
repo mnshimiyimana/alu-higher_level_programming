@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-
+"""Lists all states with starting name with N from the databse"""
+   
 
 import MySQLdb
-from sys import argv
+import sys
 
-'''
-lists all states with starting name with N
-from the database hbtn_0e_0_usa
-'''
+
 if __name__ == "__main__":
     con = MySQLdb.connect(
         host="localhost", port=3306, user=argv[1],
