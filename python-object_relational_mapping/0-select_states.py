@@ -4,7 +4,7 @@
 
 
 import MySQLdb
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
