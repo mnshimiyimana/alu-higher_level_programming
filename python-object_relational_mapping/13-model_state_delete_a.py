@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
 
-"""
-All states via SQLAlchemy
-"""
+"""All states via SQLAlchemy"""
 
 from sys import argv
 from model_state import Base, State
