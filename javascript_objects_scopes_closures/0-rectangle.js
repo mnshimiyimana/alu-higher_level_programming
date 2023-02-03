@@ -1,5 +1,5 @@
 #!/usr/bin/node
-public class Rectangle {
+class Rectangle {
 	
 
 }
